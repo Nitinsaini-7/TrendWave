@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.active hr{
+    display: block;
+    
+
+}
+
+a.active p{
+    color: orange;
+
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@media (max-width:640px) {
+    a.active{
+        background-color: orange;
+        color: white;
+           
+    }
+    
+}
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  
