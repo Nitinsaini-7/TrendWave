@@ -14,18 +14,23 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // Connect to database and cloudinary
+connectDB();
+connectCloudinary();
 
 // Middleware
 
 // Set up CORS correctly
-
-app.use(cors({
-  origin: 'https://trend-wave-admin.vercel.app'
-}));
-// API endpoints
 app.use(express.json());
-connectDB();
-connectCloudinary();
+app.use(
+  cors({
+    origin: 'https://trend-wave-admin.vercel.app', // Allow only this origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+    credentials: true, 
+  })
+);
+
+// API endpoints
 app.use('/api/user', userRouter);
 app.use('/api/product', productRouter);
 app.use('/api/cart', cartRouter);
