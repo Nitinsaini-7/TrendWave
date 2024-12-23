@@ -51,6 +51,7 @@ const Navbar = () => {
         <ul className="hidden sm:flex gap-5 uppercase text-gray-700">
           {navData.map((item, index) => (
             <NavLink
+              onClick={() => window.scroll(0, 0)}
               key={index}
               to={item.link}
               className="flex flex-col items-center gap-1"
@@ -99,7 +100,11 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/cart" className="relative">
+          <Link
+            onClick={() => window.scroll(0, 0)}
+            to="/cart"
+            className="relative"
+          >
             <img
               src={assets.cart_icon}
               alt=""
@@ -135,7 +140,10 @@ const Navbar = () => {
           </div>
           {navData.map((item, index) => (
             <NavLink
-              onClick={() => setVisible(false)}
+              onClick={() => {
+                setVisible(false);
+                window.scroll(0, 0);
+              }}
               to={item.link}
               key={index}
               className="py-3 text-black bg-gray-100 text-center "
