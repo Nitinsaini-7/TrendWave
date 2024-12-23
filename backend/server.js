@@ -21,14 +21,17 @@ connectCloudinary();
 
 // Set up CORS correctly
 app.use(express.json());
-app.use(
-  cors({
-    origin: 'https://trend-wave-lilac.vercel.app', // Allow only this origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
-    credentials: true, 
-  })
-);
+
+const allowedOrigins = ['https://trend-wave-admin.vercel.app'];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 // API endpoints
 app.use('/api/user', userRouter);
