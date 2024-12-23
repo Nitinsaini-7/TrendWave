@@ -94,23 +94,17 @@ const Footer = () => {
         <div className="mt-10 border-t border-gray-100 pt-5">
           <div className="text-center sm:flex sm:justify-between sm:text-left">
             <p className="text-sm text-white">
-              <span className="block sm:inline">All rights reserved.</span>
+              <span className="block sm:inline">Developed By </span>
 
-              <Link
-                className="inline-block pt-2 text-blue-500 underline transition hover:text-blue-400"
+              <Link to={"https://personal-portfolio-nitin-saini.vercel.app/"}
+                className="inline-block pt-2 font-bold transition hover:text-[orange]"
                 href="#"
               >
-                Terms & Conditions
+                Nitin Saini
               </Link>
+              <span> With 🧡</span>
 
-              <span>&middot;</span>
-
-              <Link
-                className="inline-block text-blue-500 underline transition hover:text-blue-400"
-                href="#"
-              >
-                Privacy Policy
-              </Link>
+             
             </p>
 
             <p className="mt-4 text-sm text-white sm:order-first sm:mt-0">

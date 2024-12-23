@@ -72,7 +72,7 @@ const Product = () => {
                 <button
                   onClick={() => setSize(item)}
                   className={`border rounded-full bg-slate-300 w-12 h-12 ${
-                    item === size ? "bg-orange-400" : ""
+                    item === size ? "bg-orange-300" : ""
                   }`}
                   key={index}
                 >
