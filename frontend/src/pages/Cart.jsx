@@ -10,7 +10,7 @@ const Cart = () => {
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
-    if(token){
+    
 
       if (products.length > 0) {
         const tempData = [];
@@ -28,7 +28,6 @@ const Cart = () => {
         }
         setCartData(tempData);
       }
-    }
   }, [cartItems, products]);
 
   return (
