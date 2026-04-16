@@ -12,7 +12,13 @@ import contactRouter from './routes/contactRoute.js';
 // App configuration
 const app = express();
 const port = process.env.PORT || 3001;
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://trend-wave-frontend.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 // Connect to database and cloudinary
 connectDB();
