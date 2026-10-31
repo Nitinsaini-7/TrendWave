@@ -24,8 +24,6 @@ app.use(
 connectDB();
 connectCloudinary();
 
-// Middleware
-
 // Set up CORS correctly
 app.use(express.json());
 
